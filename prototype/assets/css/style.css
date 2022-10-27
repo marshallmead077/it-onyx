@@ -63,10 +63,8 @@ html {
     font-family: 'IBM Plex Mono', monospace;
     margin: 0;
     line-height:1.4rem;
-  }
-  body{
-    background-image:url("prototype/assets/img/space.png");
     background-color: #dad0d0;
+    background-image:url("https//marshallmead077.github.io/it-onyx/prototype/assets/img/space.png");
   }
   
   header.primary {
@@ -80,24 +78,12 @@ html {
     padding-right: 40px;
     padding-bottom: 40px;
     padding-left: 40px;
-    
   }
     
   
   header.primary h1 {
     font-size: 5rem;
     margin: 10px 0 20px;
-  }
-  
-  header.primary h1 a {
-    color: #e9dddd;
-    text-decoration: underline black;
-  }
-  
-  header.primary h2 {
-    font-size: 1.6rem;
-    /* Top | Left/Right | Bottom */
-    margin: 0 auto 40px;
   }
   
   header.primary nav {
