@@ -6,11 +6,27 @@
   <meta charset="utf-8">
   <meta name="description" content="Keyword rich description of the site's purpose">
   <meta name="author" content="MarshallMead">
-  <link href="Validation/assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
+<body>
 <h1>New Patient Registration</h1>
 <h3>Please fill out form below</h3>
 <form id="SubmitForm"  action="https://brucebauer.info/assets/ITEC3650/datadump.php">
-    <label for="fname">First Name:</label><br>
+    <label for="fname" class="formlabel">First Name:</label>
     <input type="text" id="Name" name="FirstName" size="30" maxlength="10">
+    <br>
+    <label for="Mname"class="formlabel">middle Initial:</label>
+    <input type="text" id="name" name="middleinitial" size="1" maxlength="1">
+    <br>
+    <label for="Lname" class="formlabel">Last Name:</label>
+    <input type="text" id="name" name="lastname" size="30" maxlength="30">
+
+
+    <hr>
+    <input type="submit" value="submit" name="submitbutton">
+
     </form>
+  </body>
+
+  </html>
