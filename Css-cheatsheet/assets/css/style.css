@@ -20,15 +20,46 @@ body{
   padding:40px;
 }
 
+img {
+  max-width:100%;
+}
+
 .img-right{
-  float:right;
   border: 2px solid #cc3867;
   padding:5px;
   border-radius:20px 0;
   max-width:calc(50% - 20px);
   margin: 20px 0 20px 20px;
+  float:right;
 }
 
+.img-right-full{
+  border: 2px solid #cc3867;
+  padding:5px;
+  border-radius:20px 0;
+  max-width:100%;
+  margin: 20px 0 20px 20px;
+}
+
+.col-wrap{
+  display:flex;
+  justify-content:space-between;
+}
+
+.col-wrap div:first-of-type{
+  width:30%;
+  background:red;
+}
+
+.col-wrap div:nth-child(2){
+  width:30%;
+  background:red;
+}
+
+.col-wrap div:last-of-type{
+width:30%;
+  background:red;
+}
 
 /*
  ~Longform~
@@ -128,3 +159,71 @@ header.primary nav a:hover{
   border-radius: 15px 0;
 }
 
+#blog{
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(16,77,115,1) 100%);
+  padding:20px 0;
+  border-top: 6px double #0a96A6;
+  border-bottom: 6px double #0a96A6;
+}
+
+#blog > h2{
+  color:#ffffff;
+  text-shadow: 2px 2px #000;
+  font-size:2.2rem;
+  margin-left:20px;
+}
+
+#blog article.post {
+  background:#fff;
+  margin:20px;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "figure header"
+    "figure post-content"
+    "figure footer";
+  grid-gap:20px;  
+}
+
+#blog figure{
+  margin:0;
+  grid-area:figure;
+}
+
+#blog header{
+  grid-area:header;
+}
+
+#blog .post-content{
+  grid-area:post-content;
+}
+
+#blog footer{
+  grid-area:footer;
+}
+
+aside.container{
+  display:flex;
+}
+aside article.widget{
+  flex:0 0 50%;
+}
+aside .widget:first-of-type{
+  border-right:1px dotted #000;
+  padding-right:40px;
+}
+
+aside .widget:last-of-type{
+  padding-left:40px;
+}
+
+#colophon{
+  background:url:("https://assets.codepen.io/7248/bg_1.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 20px;
+  color:#fff;
+ text-align:center;
+}
