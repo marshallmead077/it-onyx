@@ -218,7 +218,7 @@ header.primary nav a:hover{
   grid-area:footer;
 }
 
-aside.container{
+aside .container{
   display:flex;
 }
 aside article.widget{
@@ -233,8 +233,18 @@ aside .widget:last-of-type{
   padding-left:40px;
 }
 
+aside article.widget a{
+  color: black;
+}
+
+aside article.widget h2 {
+  border-left:7.5px solid #d94179;
+  padding: 5px 7.5px;
+  border-radius: 15px 0;
+}
+
 footer#colophon{
-  background:url:("https://assets.codepen.io/7248/bg_1.png");
+  background:url("https://assets.codepen.io/7248/bg_1.png");
   background-repeat: no-repeat;
   background-size:cover;
   padding: 20px;
