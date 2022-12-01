@@ -36,9 +36,13 @@
     <br>
     <label for="middlename" class= "formlabel">middle Initial:</label>
     <input type="text" id="middlename" name="middleinitial" size="1" maxlength="1">
+   
     <br>
     <label for="Lastname" class= "formlabel">Last Name:</label>
-    <input type="text" id="lastname" name="lastname" size="30" maxlength="30">
+    <input type="text" id="Lastname" name="Lastname" size="30" maxlength="30"
+    data-rule-required="true"  data-msg-required="Last Name  Required">
+    <label for="Lastname" class="error"></label>
+
     <br>
     <label for="Email" class="formlabel">Email:</label>
 
