@@ -50,7 +50,7 @@ data-rule-email="true" data-msg-email="Invalid Email">
 <label for="Email" class="error"></label>
 <br>
 
-<label for="Sex" class="formlabel">Sex:</label>
+<label class="formlabel">Sex:</label>
 <label for="Male"><input type="radio" name="Sex" id="Male" value="Male"
     data-rule-required="true" data-msg-required="Sex is Required">Male</label>
 <label for="Female"><input type="radio" name="Sex" id="Female" value="Female">Female</label>
@@ -69,7 +69,7 @@ data-rule-email="true" data-msg-email="Invalid Email">
     data-rule-required="true" data-msg-required="Height is required"
     data-rule-number="true" data-msg-number="Height must be a number in inches."
     data-rule-min="12" data-msg-min="Height must be greater than or equal to 12 inches"
-    data-rule-max="30" data-msg-max="Height must be less than or equal to 30 inches">
+    data-rule-max="120" data-msg-max="Height must be less than or equal to 120 inches">
     <label for="Height" class="error"></label>
     <br>
 
@@ -107,7 +107,8 @@ data-rule-required="true" data-msg-required="Marital Status Required">
     <label for="City" class="formlabel">City/State/Zip:</label>
         <input type="text" id="City" name="City" size="30" maxlength="30" 
         data-rule-required="true" data-msg-required="required">
-        <select name="State">
+        <select name="State"
+        data-rule-required="true" data-msg-required="required">
             <option value="">Select a State...</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -162,18 +163,18 @@ data-rule-required="true" data-msg-required="Marital Status Required">
             <option value="WY">Wyoming</option>
         </select> 
         
-        <input type="text" name="Zip" size="5" maxlength="5"
-        data-rule-required="true" data-msg-required="zip code required"
-        date-rule-number="true" data-msg-number="must be numbers">
+        <input type="text" name="Zip" id="Zip" size="5" maxlength="5" 
+        data-rule-required="true" data-msg-required="zip code required" data-rule-number="true" data-msg-number="number">
+        <label for="Zip" class="error"></label>
         <br>
-        <label for="medications" class="formlabel">Taking medications:</label>
+        <label class="formlabel">Taking medications:</label>
         <label for="yes"><input type="radio" name="medications" id="yes" value="yes"
             data-rule-required="true" data-msg-required="Required">Yes</label>
         <label for="no"><input type="radio" name="medications" id="no" value="no">No</label>
         <label for="medications" class="error"></label>
     <br>
     <label for="textbox" class="formlabel">If yes, list medications here:</label>
-    <textarea name="textbox" rows="3" cols="30"></textarea>
+    <textarea name="textbox" id="textbox" rows="3" cols="30"></textarea>
 <hr>
     <input type="submit" value="Submit Patient Form" name="submitbutton">
 
