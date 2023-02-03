@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Calculator</title>
+    <meta charset ="utf-8"> 
+    <meta name="author" content="Marshall Mead">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+</head>
+
+<body>
+    <form id="myform">
+        <div class="formcontainer" onsubmit="return false">
+            <h1>Calculator</h1>
+            <fieldset id="detail">
+                <legend>Add Subtract multiply</legend>  
+                <br>
+                
+                <label class="formlabel" for="Number1">Number 1: </label>
+                <input type="text" id="Number1" name="Number1" size="15" maxlength="15"       
+                       data-rule-required="true"  data-msg-required="Number 1 is Required" 
+                       data-rule-number="true" data-msg-number="Number 1 must be a Number">
+                <label class="error" for="Number1" id="Number1Error"></label>
+                <br><br>
+          
+                <label class="formlabel" for="Number2">Number 2: </label>
+                <input type="text" id="Number2" name="Number2" size="15" maxlength="15"       
+                       data-rule-required="true"  data-msg-required="Operand 2 is Required" 
+                       data-rule-number="true" data-msg-number="Number 2 must be a Number">
+                <label class="error" for="Number2" id="Number2Error"></label>
+                <br><br>
+    
+                <label class="formlabel" for="Number3">Number 3: </label>
+                <input type="text" id="Number3" name="Number3" size="15" maxlength="15"       
+                       data-rule-required="true"  data-msg-required="Number 3 is Required" 
+                       data-rule-number="true" data-msg-number="Number 3 must be a Number">
+                <label class="error" for="Number3" id="Number3Error"></label>
+                <br><br>
+    
+                <label class="formlabel">choice: </label>
+                    <label for="AddNumber">
+                        <input type="radio" name="Number" id="AddNumber" value="Add"
+                               data-rule-required="true" data-msg-required="choice is Required" />Add
+                    </label>
+                    <label for="SubtractNumber">
+                        <input type="radio" name="Number" id="SubtractNumber" value="Subtract">Subtract
+                    </label>
+                    <label for="MultiplyNumber">
+                        <input type="radio" name="Number" id="MultiplyNumber" value="Multiply">Multiply
+                    </label>
+                <label for="Number" class="error" id="NumberError"></label>
+                <br><br>
+    
+                <label class="formlabel">Result: </label>
+                <span id="Result"></span>
+                <br><br>
+    
+                <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
+                <input type="button" value="Clear" name="Clear" onclick="clearform();" novalidate>
+    
+            </fieldset>
+        </div>
+    </form>
+    <script src="assets/js/script.js"></script>
+    </body>
+    </html>
+      

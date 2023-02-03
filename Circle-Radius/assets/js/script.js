@@ -70,11 +70,13 @@ function displayCircle() {
       return Math.PI * radius * radius;
   }
   
-  function clearForm()
+  function clearForm() 
 {
     document.getElementById("radius").value = "";
     document.getElementById("radiuserror").innerHTML = "";
-    document.getElementById("circumference").value = "";
-    document.getElementById("circumferenceerror").innerHTML = "";
-    document.getElementById("hypotenuse").innerHTML = "";
+    document.getElementById("circumference").innerHTML = "";
+    document.getElementById("area").innerHTML = "";
+    document.getElementById("diameter").innerHTML = "";
+   
 }
+
