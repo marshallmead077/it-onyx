@@ -4,58 +4,50 @@ function calculate() {
     if ($( "#myform" ).valid()) {
         
         /* get the operands from the form */
-        var number1 = document.getElementById("Number1").value;
-        var number2 = document.getElementById("Number2").value;
-        var number3 = document.getElementById("Number3").value;
+        var operand1 = document.getElementById("Operand1").value;
+        var operand2 = document.getElementById("Operand2").value;
+        
         
         /* convert the operands from string to floating point */
-        var number1fp = parseFloat (number1);
-        var number2fp = parseFloat (number2);
-        var number3fp = parseFloat (number3);
+        var operand1fp = parseFloat (operand1);
+        var operand2fp = parseFloat (operand2);
+        
         
         /* figure out which operator was checked and place the value in operator */
-        var number;
-        if (document.getElementById("AddNumber").checked) {
-            number = document.getElementById("AaddNumber").value;
+        var operator;
+        if (document.getElementById("AddOperator").checked) {
+            operator = document.getElementById("AddOperator").value;
         }
-        if (document.getElementById("SubtarctNumber").checked) {
-            number = document.getElementById("SubtarctNumber").value;
+        if (document.getElementById("SubtractOperator").checked) {
+            operator = document.getElementById("SubtractOperator").value;
         }
-        if (document.getElementById("MultiplyNumber").checked) {
-            number = document.getElementById("MultiplyNumber").value;
+        if (document.getElementById("MultiplyOperator").checked) {
+            operator = document.getElementById("MultiplyOperator").value;
+        }
+        if (document.getElementById("DivisionOperator").checked) {
+            operator = document.getElementById("DivisionOperator").value;
         }
 
         var result;
         
         /* if the operator was "Min" then set result to the minimum */
         if (operator == "Add") {
-            if(number1fp <= number2fp && number1fp <= number3fp) {
-                result = operand1fp;
-            }
-            if(number2fp <= number1fp && number2fp <= number3fp) {
-                result = number2fp;
-            }
-            if(number3fp <=number1fp && number3fp <= number2fp) {
-                result = number3fp;
-            }
+                result = operand1fp + operand2fp;
         }
  
         /* if the operator was "Max" then set result to the maximum */
         if (operator == "Subtract") {
-            if(number1fp <= number2fp && number1fp <= number3fp) {
-                result = operand1fp;
-            }
-            if(number2fp <= number1fp && number2fp <= number3fp) {
-                result = number2fp;
-            }
-            if(number3fp <=number1fp && number3fp <= number2fp) {
-                result = number3fp;
-            }
+            result = operand1fp - operand2fp;
         }
 
         /* if operator was "Avg" the calcualute the average of 3 operands */
         if (operator == "Multiply") {
-            result = (numberfp + number2fp + number3fp) / 3.0;
+            result = operand1fp * operand2fp;
+        }
+        
+        /* if operator was "Avg" the calcualute the average of 3 operands */
+        if (operator == "Division") {
+            result = operand1fp / operand2fp;
         }
         
         /* convert the result to a string and display it */
@@ -66,16 +58,15 @@ function calculate() {
 function clearform() {
     
     /* Set all of the form values to blank or false */
-    document.getElementById("Number1").value = "";
-    document.getElementById("Number2").value = "";
-    document.getElementById("Number3").value = "";
-    document.getElementById("Number1Error").innerHTML = "";
-    document.getElementById("Number2Error").innerHTML = "";
-    document.getElementById("Number3Error").innerHTML = "";
-    document.getElementById("AddNumber").checked = false;
-    document.getElementById("SubtarctNumber").checked = false;
-    document.getElementById("MultiplyNumber").checked = false;
-    document.getElementById("NumberError").innerHTML = "";
+    document.getElementById("Operand1").value = "";
+    document.getElementById("Operand2").value = "";
+    document.getElementById("Operand1Error").innerHTML = "";
+    document.getElementById("Operand2Error").innerHTML = "";
+    document.getElementById("AddOperator").checked = false;
+    document.getElementById("SubtractOperator").checked = false;
+    document.getElementById("MultiplyOperator").checked = false;
+    document.getElementById("DivisionOperator").checked = false;
+    document.getElementById("OperatorError").innerHTML = "";
     document.getElementById("Result").innerHTML = "";
 }
 
