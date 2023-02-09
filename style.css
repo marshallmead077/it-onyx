@@ -41,3 +41,24 @@
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+  body{
+    background-color: rgb(212, 16, 199) ;
+  }
+ 
+   ul {
+   font-family: 'Itim', cursive;
+   font-size: 30px;
+
+  }
+
+  li {
+    display: inline;
+    padding-left: 30px;
+  }
+
+  h1{
+    font-family: 'Itim', cursive;
+    font-size: 80px;
+    text-align: center;
+  }
