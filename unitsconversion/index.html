@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="JavaScript Calculator">
+    <meta name="keywords" content="JavaScript, HTML, CSS">
+    <meta name="author" content="Marshall Mead">
+    <title>Units Conversion</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+</head>
+<body>
+<form id="myform">
+    <div class="formcontainer" onsubmit="return false">
+        <h1>Unit Coverter (AJAX)</h1>
+        <fieldset id="detail">
+            <legend>Unit Coverter (AJAX)</legend>  
+            <br>
+            
+            <label class="formlabel" for="FormVaule">Form value: </label>
+            <input type="text" id="FormVaule" name="FormVaule" size="15" maxlength="15"       
+                   data-rule-required="true"  data-msg-required="Vaule is Required" 
+                   data-rule-number="true" data-msg-number="value must be a Number">
+            <label class="error" for="FormVaule" id="FormVauleError"></label>
+            <br><br>
+
+            <label class="formlabel">From Unit:</label>
+                <label for="cm">
+                    <input type="radio" name="FormUnit" id="cm" value="Centimeters"
+                           data-rule-required="true" data-msg-required="Form Unit is Required" />Centimeters
+                </label>
+                <label for="m">
+                    <input type="radio" name="FormUnit" id="m" value="Meters">Meters
+                </label>
+                <label for="km">
+                    <input type="radio" name="FormUnit" id="km" value="Kilometers">Kilometers
+                </label>
+                <label for="in">
+                    <input type="radio" name="FormUnit" id="in" value="Inches">Inches
+                </label>
+                <label for="ft">
+                    <input type="radio" name="FormUnit" id="ft" value="Feet">Feet
+                </label>
+                <label for="yd">
+                    <input type="radio" name="FormUnit" id="yd" value="Yards">Yards
+                </label>
+                <label for="mi">
+                    <input type="radio" name="FormUnit" id="mi" value="Miles">Miles
+                </label>
+            <label for="FormUnit" class="error" id="FormUnitError"></label>
+            <br><br>
+            <label class="formlabel">To Unit:</label>
+            <label for="cm">
+                <input type="radio" name="ToUnit" id="tocm" value="Centimeters"
+                       data-rule-required="true" data-msg-required="Form Unit is Required" />Centimeters
+            </label>
+            <label for="m">
+                <input type="radio" name="ToUnit" id="tom" value="Meters">Meters
+            </label>
+            <label for="km">
+                <input type="radio" name="ToUnit" id="tokm" value="Kilometers">Kilometers
+            </label>
+            <label for="in">
+                <input type="radio" name="ToUnit" id="toin" value="Inches">Inches
+            </label>
+            <label for="ft">
+                <input type="radio" name="ToUnit" id="toft" value="Feet">Feet
+            </label>
+            <label for="yd">
+                <input type="radio" name="ToUnit" id="toyd" value="Yards">Yards
+            </label>
+            <label for="mi">
+                <input type="radio" name="ToUnit" id="tomi" value="Miles">Miles
+            </label>
+        <label for="ToUnit" class="error" id="ToUnitError"></label>
+        <br><br>
+      
+
+            <label class="formlabel">To Value: </label>
+            <span id="ToVaule"></span>
+            <br><br>
+
+            <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
+            <input type="button" value="Clear" name="Clear" onclick="clearform();" novalidate>
+
+        </fieldset>
+    </div>
+</form>
+<script src="assets/js/scrpit.js"></script>
+</body>
+</html>
