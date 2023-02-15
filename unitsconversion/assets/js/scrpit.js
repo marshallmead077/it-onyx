@@ -18,7 +18,7 @@ function calculate() {
             FromUnit = document.getElementById("m").value;
         }
         if (document.getElementById("km").checked) {
-            FromUnit = document.getElementById("km").value;
+            FromUnit = document.getElementById("k").value;
         }
         if (document.getElementById("in").checked) {
             FromUnit = document.getElementById("in").value;
@@ -34,25 +34,25 @@ function calculate() {
         }
         var ToUnit;
         if (document.getElementById("tocm").checked) {
-            ToUnit = document.getElementById("tocm").value;
+            ToUnit = document.getElementById("cm").value;
         }
         if (document.getElementById("tom").checked) {
-            FromUnit = document.getElementById("tom").value;
+            FromUnit = document.getElementById("m").value;
         }
         if (document.getElementById("tokm").checked) {
-            ToUnit = document.getElementById("tokm").value;
+            ToUnit = document.getElementById("k").value;
         }
         if (document.getElementById("toin").checked) {
-            ToUnit = document.getElementById("toin").value;
+            ToUnit = document.getElementById("in").value;
         }
         if (document.getElementById("toft").checked) {
-            ToUnit = document.getElementById("toft").value;
+            ToUnit = document.getElementById("ft").value;
         }
         if (document.getElementById("toyd").checked) {
-            ToUnit = document.getElementById("toyd").value;
+            ToUnit = document.getElementById("yd").value;
         }
         if (document.getElementById("tomi").checked) {
-            ToUnit = document.getElementById("tomi").value;
+            ToUnit = document.getElementById("mi").value;
         }
 
         var FormValue = document.getElementById("FormValue").value;
@@ -82,8 +82,8 @@ function calculate() {
         function clearform() {
     
     /* Set all of the form values to blank or false */
-    document.getElementById("FormVaule").value = "";
-    document.getElementById("FormVauleError").innerHTML = "";
+    document.getElementById("FormValue").value = "";
+    document.getElementById("FormValueError").innerHTML = "";
     document.getElementById("cm").checked = false;
     document.getElementById("m").checked = false;
     document.getElementById("km").checked = false;
