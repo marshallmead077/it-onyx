@@ -1,72 +1,103 @@
 function calculate() {
+    "use strict";
     
     /* Make sure that the form is valid */
     if ($( "#myform" ).valid()) {
+
+    
         
         /* get the operands from the form */
-        var operand1 = document.getElementById("Operand1").value;
-        var operand2 = document.getElementById("Operand2").value;
-        
-        
-        /* convert the operands from string to floating point */
-        var operand1fp = parseFloat (operand1);
-        var operand2fp = parseFloat (operand2);
-        
-        
+        var FormValue = document.getElementById("FormValue").value;
+
         /* figure out which operator was checked and place the value in operator */
-        var operator;
-        if (document.getElementById("AddOperator").checked) {
-            operator = document.getElementById("AddOperator").value;
+        var FromUnit;
+        if (document.getElementById("cm").checked) {
+            FromUnit = document.getElementById("cm").value;
         }
-        if (document.getElementById("SubtractOperator").checked) {
-            operator = document.getElementById("SubtractOperator").value;
+        if (document.getElementById("m").checked) {
+            FromUnit = document.getElementById("m").value;
         }
-        if (document.getElementById("MultiplyOperator").checked) {
-            operator = document.getElementById("MultiplyOperator").value;
+        if (document.getElementById("km").checked) {
+            FromUnit = document.getElementById("km").value;
         }
-        if (document.getElementById("DivisionOperator").checked) {
-            operator = document.getElementById("DivisionOperator").value;
+        if (document.getElementById("in").checked) {
+            FromUnit = document.getElementById("in").value;
+        }
+        if (document.getElementById("ft").checked) {
+            FromUnit = document.getElementById("ft").value;
+        }
+        if (document.getElementById("yd").checked) {
+            FromUnit = document.getElementById("yd").value;
+        }
+        if (document.getElementById("mi").checked) {
+            FromUnit = document.getElementById("mi").value;
+        }
+        var ToUnit;
+        if (document.getElementById("tocm").checked) {
+            ToUnit = document.getElementById("tocm").value;
+        }
+        if (document.getElementById("tom").checked) {
+            FromUnit = document.getElementById("tom").value;
+        }
+        if (document.getElementById("tokm").checked) {
+            ToUnit = document.getElementById("tokm").value;
+        }
+        if (document.getElementById("toin").checked) {
+            ToUnit = document.getElementById("toin").value;
+        }
+        if (document.getElementById("toft").checked) {
+            ToUnit = document.getElementById("toft").value;
+        }
+        if (document.getElementById("toyd").checked) {
+            ToUnit = document.getElementById("toyd").value;
+        }
+        if (document.getElementById("tomi").checked) {
+            ToUnit = document.getElementById("tomi").value;
         }
 
-        var result;
-        
-        /* if the operator was "Min" then set result to the minimum */
-        if (operator == "Add") {
-                result = operand1fp + operand2fp;
-        }
- 
-        /* if the operator was "Max" then set result to the maximum */
-        if (operator == "Subtract") {
-            result = operand1fp - operand2fp;
-        }
-
-        /* if operator was "Avg" the calcualute the average of 3 operands */
-        if (operator == "Multiply") {
-            result = operand1fp * operand2fp;
-        }
-        
-        /* if operator was "Avg" the calcualute the average of 3 operands */
-        if (operator == "Division") {
-            result = operand1fp / operand2fp;
-        }
-        
-        /* convert the result to a string and display it */
-        document.getElementById("Result").innerHTML = result.toString();
+        var FormValue = document.getElementById("FormValue").value;
     }
-}
+        CalculateResult(FormValue, FromUnit, ToUnit);{
+            
+        }
+        async function CalculateResult(FormValue, FromUnit, ToUnit) {
+        
+        
+    
+    
+        
+        
+        var myURL = "https://brucebauer.info/assets/ITEC3650/unitsconversion.php";
 
-function clearform() {
+        myURL = myURL + "?FromValue=" + encodeURIComponent(FormValue) + "&FromUnit=" + encodeURIComponent(FromUnit) + "&ToUnit=" + encodeURIComponent(ToUnit);
+
+        let myCalcObject = await fetch(myURL);
+        let myResult = await myCalcObject.text();
+        
+        document.getElementById("Result").innerHTML = myResult; 
+        }
+    }
+    
+        
+        function clearform() {
     
     /* Set all of the form values to blank or false */
-    document.getElementById("Operand1").value = "";
-    document.getElementById("Operand2").value = "";
-    document.getElementById("Operand1Error").innerHTML = "";
-    document.getElementById("Operand2Error").innerHTML = "";
-    document.getElementById("AddOperator").checked = false;
-    document.getElementById("SubtractOperator").checked = false;
-    document.getElementById("MultiplyOperator").checked = false;
-    document.getElementById("DivisionOperator").checked = false;
-    document.getElementById("OperatorError").innerHTML = "";
+    document.getElementById("FormVaule").value = "";
+    document.getElementById("FormVauleError").innerHTML = "";
+    document.getElementById("cm").checked = false;
+    document.getElementById("m").checked = false;
+    document.getElementById("km").checked = false;
+    document.getElementById("in").checked = false;
+    document.getElementById("ft").checked = false;
+    document.getElementById("yd").checked = false;
+    document.getElementById("mi").checked = false;
+    document.getElementById("tocm").checked = false;
+    document.getElementById("tom").checked = false;
+    document.getElementById("tokm").checked = false;
+    document.getElementById("toin").checked = false;
+    document.getElementById("toft").checked = false;
+    document.getElementById("toyd").checked = false;
+    document.getElementById("tomi").checked = false;
     document.getElementById("Result").innerHTML = "";
 }
 

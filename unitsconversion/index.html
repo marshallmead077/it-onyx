@@ -19,37 +19,37 @@
             <legend>Unit Coverter (AJAX)</legend>  
             <br>
             
-            <label class="formlabel" for="FormVaule">Form value: </label>
-            <input type="text" id="FormVaule" name="FormVaule" size="15" maxlength="15"       
+            <label class="formlabel" for="FormValue">Form value: </label>
+            <input type="text" id="FormValue" name="FormValue" size="15" maxlength="15"       
                    data-rule-required="true"  data-msg-required="Vaule is Required" 
                    data-rule-number="true" data-msg-number="value must be a Number">
-            <label class="error" for="FormVaule" id="FormVauleError"></label>
+            <label class="error" for="FormValue" id="FormValueError"></label>
             <br><br>
 
             <label class="formlabel">From Unit:</label>
                 <label for="cm">
-                    <input type="radio" name="FormUnit" id="cm" value="Centimeters"
+                    <input type="radio" name="FromUnit" id="cm" value="Centimeters"
                            data-rule-required="true" data-msg-required="Form Unit is Required" />Centimeters
                 </label>
                 <label for="m">
-                    <input type="radio" name="FormUnit" id="m" value="Meters">Meters
+                    <input type="radio" name="FromUnit" id="m" value="Meters">Meters
                 </label>
                 <label for="km">
-                    <input type="radio" name="FormUnit" id="km" value="Kilometers">Kilometers
+                    <input type="radio" name="FromUnit" id="km" value="Kilometers">Kilometers
                 </label>
                 <label for="in">
-                    <input type="radio" name="FormUnit" id="in" value="Inches">Inches
+                    <input type="radio" name="FromUnit" id="in" value="Inches">Inches
                 </label>
                 <label for="ft">
-                    <input type="radio" name="FormUnit" id="ft" value="Feet">Feet
+                    <input type="radio" name="FromUnit" id="ft" value="Feet">Feet
                 </label>
                 <label for="yd">
-                    <input type="radio" name="FormUnit" id="yd" value="Yards">Yards
+                    <input type="radio" name="FromUnit" id="yd" value="Yards">Yards
                 </label>
                 <label for="mi">
-                    <input type="radio" name="FormUnit" id="mi" value="Miles">Miles
+                    <input type="radio" name="FromUnit" id="mi" value="Miles">Miles
                 </label>
-            <label for="FormUnit" class="error" id="FormUnitError"></label>
+            <label for="FromUnit" class="error" id="FromUnitError"></label>
             <br><br>
             <label class="formlabel">To Unit:</label>
             <label for="cm">
@@ -79,7 +79,7 @@
       
 
             <label class="formlabel">To Value: </label>
-            <span id="ToVaule"></span>
+            <span id="Result"></span>
             <br><br>
 
             <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
