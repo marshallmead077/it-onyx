@@ -7,60 +7,60 @@ function calculate() {
     
         
         /* get the operands from the form */
-        var FormValue = document.getElementById("FormValue").value;
+        var FromValue = document.getElementById("FromValue").value;
 
         /* figure out which operator was checked and place the value in operator */
         var FromUnit;
         if (document.getElementById("cm").checked) {
-            FromUnit = document.getElementById("cm").value;
+            FromUnit = document.getElementById("centimenters").value;
         }
         if (document.getElementById("m").checked) {
-            FromUnit = document.getElementById("m").value;
+            FromUnit = document.getElementById("meters").value;
         }
         if (document.getElementById("km").checked) {
-            FromUnit = document.getElementById("k").value;
+            FromUnit = document.getElementById("kilometers").value;
         }
         if (document.getElementById("in").checked) {
-            FromUnit = document.getElementById("in").value;
+            FromUnit = document.getElementById("inches").value;
         }
         if (document.getElementById("ft").checked) {
-            FromUnit = document.getElementById("ft").value;
+            FromUnit = document.getElementById("feet").value;
         }
         if (document.getElementById("yd").checked) {
-            FromUnit = document.getElementById("yd").value;
+            FromUnit = document.getElementById("yards").value;
         }
         if (document.getElementById("mi").checked) {
-            FromUnit = document.getElementById("mi").value;
+            FromUnit = document.getElementById("miles").value;
         }
         var ToUnit;
         if (document.getElementById("tocm").checked) {
-            ToUnit = document.getElementById("cm").value;
+            ToUnit = document.getElementById("centimenters").value;
         }
         if (document.getElementById("tom").checked) {
-            FromUnit = document.getElementById("m").value;
+            FromUnit = document.getElementById("meters").value;
         }
         if (document.getElementById("tokm").checked) {
-            ToUnit = document.getElementById("k").value;
+            ToUnit = document.getElementById("kilometers").value;
         }
         if (document.getElementById("toin").checked) {
-            ToUnit = document.getElementById("in").value;
+            ToUnit = document.getElementById("inches").value;
         }
         if (document.getElementById("toft").checked) {
-            ToUnit = document.getElementById("ft").value;
+            ToUnit = document.getElementById("feet").value;
         }
         if (document.getElementById("toyd").checked) {
-            ToUnit = document.getElementById("yd").value;
+            ToUnit = document.getElementById("yards").value;
         }
         if (document.getElementById("tomi").checked) {
-            ToUnit = document.getElementById("mi").value;
+            ToUnit = document.getElementById("miles").value;
         }
 
-        var FormValue = document.getElementById("FormValue").value;
+        var FromValue = document.getElementById("FromValue").value;
     }
-        CalculateResult(FormValue, FromUnit, ToUnit);{
+        CalculateResult(FromValue, FromUnit, ToUnit);{
             
         }
-        async function CalculateResult(FormValue, FromUnit, ToUnit) {
+        async function CalculateResult(FromValue, FromUnit, ToUnit) {
         
         
     
@@ -69,7 +69,7 @@ function calculate() {
         
         var myURL = "https://brucebauer.info/assets/ITEC3650/unitsconversion.php";
 
-        myURL = myURL + "?FromValue=" + encodeURIComponent(FormValue) + "&FromUnit=" + encodeURIComponent(FromUnit) + "&ToUnit=" + encodeURIComponent(ToUnit);
+        myURL = myURL + "?FromValue=" + encodeURIComponent(FromValue) + "&FromUnit=" + encodeURIComponent(FromUnit) + "&ToUnit=" + encodeURIComponent(ToUnit);
 
         let myCalcObject = await fetch(myURL);
         let myResult = await myCalcObject.text();
@@ -82,8 +82,8 @@ function calculate() {
         function clearform() {
     
     /* Set all of the form values to blank or false */
-    document.getElementById("FormValue").value = "";
-    document.getElementById("FormValueError").innerHTML = "";
+    document.getElementById("FromValue").value = "";
+    document.getElementById("FromValueError").innerHTML = "";
     document.getElementById("cm").checked = false;
     document.getElementById("m").checked = false;
     document.getElementById("km").checked = false;
