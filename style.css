@@ -44,19 +44,41 @@
 
   body{
     background-color: rgb(212, 16, 199) ;
+    
   }
  
-   ul {
-   font-family: 'Itim', cursive;
-   font-size: 30px;
-
+  nav{
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    justify-content: right;
+    display: block;
+    padding: 20px;
   }
 
-  li {
-    display: inline;
-    padding-left: 30px;
+  nav ul li{
+    list-style: none;
+    display:inline-block;
+    margin: 0 10px;
+    text-transform: uppercase;
+   
+    
   }
 
+  nav ul li a{
+    color: rgb(7, 186, 40);
+    font-weight: bold;
+    transition: all 0.5s ease;
+    font-size: 25px;
+    font-family: 'Titan One', cursive;
+    
+  }
+  nav ul li a:hover{
+    color:#07ff34;
+  }
   h1{
     font-family: 'Itim', cursive;
     font-size: 80px;
