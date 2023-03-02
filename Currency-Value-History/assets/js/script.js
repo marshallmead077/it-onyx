@@ -1,4 +1,4 @@
-async function GetStock() {
+async function GetCurrency() {
     "use strict";
 
     // Get a reference to the form - Use the ID of the form
@@ -10,13 +10,13 @@ async function GetStock() {
     // If all of the form elements are valid, the get the form values
     if (form.valid()) {
         
-        var StockSymbol = document.getElementById("StockSymbol").value;
-        var apiKey = "35eaVfKsObXpSg2O4kMLj9udr2DgVW1f"
+        var BaseCurrency = document.getElementById("BaseCurrency").value;
+        var apiKey = "j387sw870c2bHZ0uIpxQAemMM0hQzZha"
         var FromDate = document.getElementById("FromDate").value;
         var ToDate = document.getElementById("ToDate").value;
 
         /* URL for AJAX Call */
-        var myURL1 = "https://api.polygon.io/v3/reference/tickers/" + StockSymbol + "?apiKey=" + apiKey;
+        var myURL1 = "https://api.polygon.io/v3/reference/tickers/" + BaseCurrency + "?apiKey=" + apiKey;
         /* Make the AJAX call */
         var msg1Object = await fetch(myURL1);
         /* Check the status */
@@ -136,7 +136,8 @@ async function GetStock() {
 }
 
 function ClearForm() {
-    document.getElementById("StockSymbol").value = "";
+    document.getElementById("BaseCurrency").value = "";
+    document.getElementById("ConvertCurrency").value = "";
     document.getElementById("FromDate").value = "";
     document.getElementById("ToDate").value = "";
     document.getElementById("company").innerHTML = "";

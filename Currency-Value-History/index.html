@@ -1,38 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="HTML, CSS,JavaScript, AJAX, jQuery">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Polygon - Company Details">
+    <meta name="keywords" content="FOREX history">
     <meta name="author" content="Marshall Mead">
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <title>Currency Vaule History</title>
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <form id="myform">
         <div class="formcontainer">
-            <h2>Currency Vaule History</h2>
-            <label for="Base" class="formlabel" >Base Currency: </label>
-            <!--<label for="DisplayStock" class="formlabel" ></label>-->
-            <input type="select" id="Base" name="Base" size="6" maxlength="6"
-                    data-rule-required="true"  data-msg-required="Base Currency is Required">
-            <label class="error" for="StockSymbol" id="StockSymbolError"></label>
+            
+
+           
+            <label>Base Currency: </label>
+            <select name="BaseCurrency" id="BaseCurrency" data-rule-required="true" data-msg-required="Currency is Required">
+                <option value="">Select an Currency...</option>
+                <option value="AEDAUD"> Australian Dollar</option>
+                <option value="AEDCAD"> Canadian Dollar</option>
+                <option value="AEDCHF"> Swiss Franc</option>
+                <option value="AEDDKK"> Danish Krone</option>
+                <option value="AEDEUR"> Euro</option>
+                <option value="AEDGBP"> British Pound</option>
+
+
+               
+            </select>
+            <label for="BaseCurrency" class="error"></label>
+            <br>
+            <label>Convert Currency: </label>
+            <select name="ConvertCurrency" id="ConvertCurrency" data-rule-required="true" data-msg-required="Currency is Required">
+                <option value="">Select an Currency...</option>
+                <option value="AEDAUD"> Australian Dollar</option>
+                <option value="AEDCAD"> Canadian Dollar</option>
+                <option value="AEDCHF"> Swiss Franc</option>
+                <option value="AEDDKK"> Danish Krone</option>
+                <option value="AEDEUR"> Euro</option>
+                <option value="AEDGBP"> British Pound</option>
+
+            </select>
+            <label for="ConvertCurrency" class="error"></label>
             <br>
             <label class="formlabel">From Date:</label>
-            <input type="date" name="FromDate" id="FromDate" 
-                data-rule-required="true" data-msg-required="From Date is Required">
+            <input type="date" name="FromDate" id="FromDate" data-rule-required="true"
+                data-msg-required="From Date is Required">
             <label id="FromDateError" for="FromDate" class="error"></label>
+            <br>
             <label class="formlabel">To Date:</label>
-            <input type="date" name="ToDate" id="ToDate" 
-			     data-rule-required="true" data-msg-required="To Date is Required">
-		    <label id="ToDateError" for="ToDate" class="error"></label>
-            <br>
-            <br>
-            <input type="button" value="Show Results" id="ShowResults" name="ShowResults" onclick="GetStock();">
+            <input type="date" name="ToDate" id="ToDate" data-rule-required="true"
+                data-msg-required="To Date is Required">
+            <label id="ToDateError" for="ToDate" class="error"></label>
+            <br><br>
+            <input type="button" value="ShowResults" id="ShowResults" name="ShowResults" onclick="GetStock();">
             <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
             <hr>
             <br>
+           
+            
 
             <div class="clearfix">
                 <div class="img-container">
@@ -42,7 +69,8 @@
                     <span id="StockVolumeTable"></span>
                 </div>
             </div>
-            
+            <hr>
+
             <div class="clearfix">
                 <div class="img-container">
                     <canvas id="chartjs-0" width="400" height="400"></canvas>
@@ -57,6 +85,6 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="script/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
