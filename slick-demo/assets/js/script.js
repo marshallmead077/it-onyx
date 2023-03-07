@@ -3,6 +3,9 @@ $('.slider-for').slick({
   slidesToScroll: 1,
   arrows: false,
   fade: true,
+  autoplay: true,
+  speed:500,
+  autoplaySpeed: 8000,
   asNavFor: '.slider-nav',
   instructionsText: 'Changing this current slide of this carousel will change the current slide of the thumbnail carousel that follows.',
   regionLabel: 'main image carousel'
@@ -18,9 +21,3 @@ $('.slider-nav').slick({
   regionLabel: 'thumbnail carousel'
 });
 
-$('.autoplay').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-});
