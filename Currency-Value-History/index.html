@@ -1,46 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Polygon - Company Details">
-    <meta name="keywords" content="FOREX history">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Marshall Mead">
-    <title>Currency Vaule History</title>
+    <title>Currency  Value  history</title>
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <form id="myform">
         <div class="formcontainer">
+            <h1>Currency Value  history</h1>
             
 
            
             <label>Base Currency: </label>
             <select name="BaseCurrency" id="BaseCurrency" data-rule-required="true" data-msg-required="Currency is Required">
-                <option value="">Select an Currency...</option>
-                <option value="AEDAUD"> Australian Dollar</option>
-                <option value="AEDCAD"> Canadian Dollar</option>
-                <option value="AEDCHF"> Swiss Franc</option>
-                <option value="AEDDKK"> Danish Krone</option>
-                <option value="AEDEUR"> Euro</option>
-                <option value="AEDGBP"> British Pound</option>
-
-
-               
+                <option value="">Select a Currency...</option>
+                <option value="USD">US Dollar</option>
+                <option value="CNY">Chinese Yuan</option>
+                <option value="JPY">Japanese Yen</option>
+                <option value="EUR">European Union</option>
+                <option value="MXN">Mexican peso</option>
+                
             </select>
             <label for="BaseCurrency" class="error"></label>
             <br>
-            <label>Convert Currency: </label>
+            <label>Convert To Currency: </label>
             <select name="ConvertCurrency" id="ConvertCurrency" data-rule-required="true" data-msg-required="Currency is Required">
-                <option value="">Select an Currency...</option>
-                <option value="AEDAUD"> Australian Dollar</option>
-                <option value="AEDCAD"> Canadian Dollar</option>
-                <option value="AEDCHF"> Swiss Franc</option>
-                <option value="AEDDKK"> Danish Krone</option>
-                <option value="AEDEUR"> Euro</option>
-                <option value="AEDGBP"> British Pound</option>
-
+                <option value="">Select a Currency...</option>
+                <option value="USD">US Dollar</option>
+                <option value="CNY">Chinese Yuan</option>
+                <option value="EUR">European Union</option>
+                <option value="JPY">Japanese Yen</option>
+                <option value="MXN">Mexican peso</option>
             </select>
             <label for="ConvertCurrency" class="error"></label>
             <br>
@@ -54,30 +49,20 @@
                 data-msg-required="To Date is Required">
             <label id="ToDateError" for="ToDate" class="error"></label>
             <br><br>
-            <input type="button" value="ShowResults" id="ShowResults" name="ShowResults" onclick="GetStock();">
+            <input type="button" value="ShowResults" id="ShowResults" name="ShowResults" onclick="Results();">
             <input type="button" value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
             <hr>
             <br>
            
             
 
-            <div class="clearfix">
-                <div class="img-container">
-                    <span id="StockValueTable"></span>
-                </div>
-                <div class="img-container">
-                    <span id="StockVolumeTable"></span>
-                </div>
-            </div>
-            <hr>
+            
 
             <div class="clearfix">
                 <div class="img-container">
                     <canvas id="chartjs-0" width="400" height="400"></canvas>
                 </div>
-                <div class="img-container">
-                    <canvas id="chartjs-1" width="400" height="400"></canvas>
-                </div>
+                
             </div>
         </div>
     </form>
