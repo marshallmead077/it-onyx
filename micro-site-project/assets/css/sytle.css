@@ -234,6 +234,7 @@ img{
   margin-right: auto;
   width: 10%;
 }
+
 /* Desktop View */
 @media screen and (min-width: 1024px) {
   body {
